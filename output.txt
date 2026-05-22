@@ -1,0 +1,4 @@
+10
+A
+3.14
+The value of x is: 10
