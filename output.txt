@@ -1,2 +1,2 @@
-100
-20
+Value of ptr: 10
+Value of ptr: 10
