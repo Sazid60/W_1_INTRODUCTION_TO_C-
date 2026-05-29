@@ -1,2 +1,1 @@
-Value of ptr: 10
-Value of ptr: 10
+10 2 3 40 50 

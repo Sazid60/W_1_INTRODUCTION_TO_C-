@@ -82,3 +82,133 @@ int main(){
     return 0;
 }
 ```
+
+![alt text](image-2.png)
+
+
+## 2_4 Dynamic Array 
+
+
+- static array
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    //  normal cpp array 
+    int a[5];
+    for(int i=0; i<5; i++){
+        cin >> a[i];
+    }
+    for(int i=0; i<5; i++){
+        cout << a[i] << " ";
+    }
+    return 0;
+}
+```
+
+- dynamic array
+
+```cpp
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    //  dynamic array using pointer variable
+    int *a = new int[5]; // it stores 20 byte space in heap
+    for(int i=0; i<5; i++){
+        cin >> a[i];
+    }
+    for(int i=0; i<5; i++){
+        cout << a[i] << " ";
+    }
+    delete[] a; // deallocate the memory allocated in the heap
+    return 0;
+}
+```
+
+- the advantage of dynamic array is we can increase the array size and we can grab te  return as well 
+
+![alt text](image-3.png)
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int* fun(){
+    int *a = new int[5]; // it stores 20 byte space in heap
+    for(int i=0; i<5; i++){
+        cin >> a[i];
+    }
+    return a; // return the address of the first element of the array
+}
+
+int main(){
+
+    int* ptr = fun();
+    
+    for(int i=0; i<5; i++){
+        cout << ptr[i] << " ";
+    }
+    delete[] ptr;
+    return 0;
+}
+```
+
+![alt text](image-4.png)
+
+## lets increase the size of a dynamic array
+- we cant delete a static array after declaration. asa result garbage values stays still in memories . its clearly a waste of memory. here comes the help of the dynamic array. we can delete the dynamic array. 
+
+- in case of static array the previous array declared stays still which is wasting memory. 
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int a[3];
+    for (int i = 0; i < 3; i++) {
+        cin >> a[i];
+    }
+    int b[5];
+    for (int i = 0; i < 5; i++) {
+        b[i] = a[i];
+    }
+    b[3] = 40;
+    b[4] = 50;
+    for (int i = 0; i < 5; i++) {
+        cout << b[i] << " ";
+    }
+    return 0;
+}
+```
+
+- in case of dynamic array 
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int* a = new int[3];
+    for (int i = 0; i < 3; i++) {
+        cin >> a[i];
+    }
+    int* b = new int[5];
+    for (int i = 0; i < 5; i++) {
+        b[i] = a[i];
+    }
+    b[3] = 40;
+    b[4] = 50;
+    delete[] a;
+    for (int i = 0; i < 5; i++) {
+        cout << b[i] << " ";
+    }
+
+    return 0;
+}
+```
+
